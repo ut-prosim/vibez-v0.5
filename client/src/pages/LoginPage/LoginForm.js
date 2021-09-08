@@ -3,8 +3,18 @@ import "./styles.css"
 
 const LoginForm = () => {
     return (
-        <div>
-            <p>Login Form</p>
+        <div className="Login-form-ctr">
+            <input 
+                className="input-fields"
+                type="email"
+                value="EMAIL"
+                />
+            <input 
+                className="input-fields"
+                type="password"
+                value="PASSWORD"
+                />
+
         </div>
     )
 }
