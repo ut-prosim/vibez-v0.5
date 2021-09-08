@@ -1,2 +1,21 @@
 # Vibez
+
 Maricela Duron
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ryle
+
