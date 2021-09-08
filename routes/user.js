@@ -12,16 +12,16 @@ router.post("/register", async (req, res) => {
     if (user) {
       return res.status(400).json({ error: "User already exists" });
     }
-    const hashed_password = bcrypt.hash(password, 10);
+    const hashed_password = await bcrypt.hash(password, 10);
     user = new User({
       name,
       email,
-      hashed: hashed_password,
+      password: hashed_password,
     });
     await user.save();
     return res.status(201).json({ message: "User successfully created" });
   } catch (err) {
-    console.log(err);
+    console.log(err.message);
   }
 });
 
@@ -44,7 +44,7 @@ router.post("/login", async (req, res) => {
 
     return res.json({ token });
   } catch (err) {
-    console.log(err);
+    console.log(err.message);
   }
 });
 
