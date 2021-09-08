@@ -1,6 +1,7 @@
 import React from 'react'
 import "./styles.css"
 
+
 const LoginForm = () => {
     return (
         <div className="Login-form-ctr">
@@ -14,7 +15,9 @@ const LoginForm = () => {
                 type="password"
                 value="PASSWORD"
                 />
-
+            <p>Forgot Password?</p>
+            <button>SIGN IN</button>
+            <p>Dont have an account? Join Now</p>
         </div>
     )
 }
