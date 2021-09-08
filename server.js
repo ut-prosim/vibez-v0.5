@@ -8,6 +8,8 @@ const cors = require('cors');
 
 
 mongoose.connect(process.env.DB_URI, {
+   useNewUrlParser: true,
+   useUnifiedTopology: false,
 
 })
 .then(() => console.log('mongoDB is connected'))
