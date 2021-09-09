@@ -22,15 +22,15 @@ const SignupForm = () => {
 
        const res = await UserService.create(newUser);
 
-       if (res.data.data) {
-         if (res.data.data.token) {
-           const token = res.data.data.token;
+       if (res.data) {
+         if (res.data.token) {
+           const token = res.data.token;
            setToken(token);
            setName('')
            setEmail("");
            setPassword("");
            //redirect to home
-           history.push("/");
+           history.push("/auth");
          }
        } else {
          alert("Server Error");
