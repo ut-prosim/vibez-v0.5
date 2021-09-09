@@ -1,0 +1,14 @@
+.signup-ctr {
+    height: 1000px;
+    width: 100%;
+    background: url('../../images/loginbackground.png');
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 5%;
+    background-position: center center;
+}
+
+.signup-button {
+    margin-top: 20px;
+}
