@@ -1,8 +1,39 @@
 const router = require("express").Router();
-const User = require("../models/user");
+const User = require("../models/User");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const { requireLogin } = require("../middleware/auth");
+
+//find  all users
+router.get("/users", async (req, res) => {
+  const user = await User.find(req.params).select("-password").select("-email");
+  try {
+    if (user) {
+      return res.status(200).json(user);
+    }
+    if (!user) {
+      return res.status(400).json({ error: "User not found" });
+    }
+  } catch (err) {
+    console.log(err.message);
+  }
+});
+
+router.get("/users/:id", async (req, res) => {
+  const user = await User.findById({ _id: req.params.id })
+  .select("-password")
+  .select("-email");
+  try {
+    if (user) {
+      return res.status(200).json(user);
+    }
+    if (!user) {
+      return res.status(400).json({ error: "User not found" });
+    }
+  } catch (err) {
+    console.log(err.message);
+  }
+});
 //register user
 
 router.post("/register", async (req, res) => {

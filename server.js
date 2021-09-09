@@ -6,9 +6,6 @@ const mongoose = require('mongoose')
 const cors = require('cors');
 const path = require ('path')
 
-
-
-
 mongoose.connect(process.env.DB_URI, {
    useNewUrlParser: true,
    useUnifiedTopology: false,
