@@ -22,7 +22,7 @@ const LoginForm = () => {
       setToken(token);
       setEmail("");
       setPassword("");
-      history.push("/auth"); //path for redirecting to deezer popup page
+      history.push("/auth/spotify");
     } else {
       alert("Server Error");
     }

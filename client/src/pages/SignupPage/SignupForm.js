@@ -4,9 +4,6 @@ import { useHistory } from "react-router-dom";
 import { setToken } from "../../utils/tokenService";
 import * as UserService from "../../api/UserService";
 
-
-
-
 const SignupForm = () => {
      const history = useHistory();
      const [email, setEmail] = useState("");
@@ -21,7 +18,6 @@ const SignupForm = () => {
        };
 
        const res = await UserService.create(newUser);
-
        if (res.data) {
          if (res.data.token) {
            const token = res.data.token;
@@ -29,8 +25,7 @@ const SignupForm = () => {
            setName('')
            setEmail("");
            setPassword("");
-           //redirect to home
-           history.push("/auth");
+           history.push("/auth/spotify");
          }
        } else {
          alert("Server Error");
