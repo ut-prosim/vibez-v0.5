@@ -20,9 +20,9 @@ router.get("/users", async (req, res) => {
 });
 
 router.get("/users/:id", async (req, res) => {
-  const user = await User.findById({ _id: req.params.id }).select("-password").select("-email");
-  // .select("-password")
-  // .select("-email");
+  const user = await User.findById({ _id: req.params.id })
+  .select("-password")
+  .select("-email");
   try {
     if (user) {
       return res.status(200).json(user);
