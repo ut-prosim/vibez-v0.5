@@ -8,7 +8,7 @@ const LoginForm = () => {
   const history =  useHistory();
   const [email, setEmail] =  useState("");
   const [password, setPassword] =  useState("");
-
+  
   const handleSubmit = async () => {
     const user = {
       email,
@@ -17,7 +17,7 @@ const LoginForm = () => {
 
     const res = await UserService.login(user);
     if (res.data.data) {
-      const token = await res.data.data.token;
+      const token = res.data.data.token;
       console.log("FROM LOGIN FORM: ", token);
       setToken(token);
       setEmail("");
@@ -27,6 +27,7 @@ const LoginForm = () => {
       alert("Server Error");
     }
   };
+  
 
   return (
     <>

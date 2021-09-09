@@ -1,21 +1,21 @@
-import backEndCall from "../api/backEndCall";
+import BackEndCall from "../api/BackEndCall";
 
 function setToken(token) {
     console.log("SETTING TOKEN: ", token);
     if (token) {
         localStorage.setItem("token", token);
         // allllllsooooo...add to the auth header
-        backEndCall.defaults.headers.common["Authorization"] =
+        BackEndCall.defaults.headers.common["Authorization"] =
             "Bearer " + token;
     } else {
         localStorage.removeItem("token");
-        backEndCall.defaults.headers.common["Authorization"] = null;
+        BackEndCall.defaults.headers.common["Authorization"] = null;
     }
 }
 
 function getToken() {
     let token = localStorage.getItem("token");
-   backEndCall.defaults.headers.common["Authorization"] = "Bearer " + token;
+   BackEndCall.defaults.headers.common["Authorization"] = "Bearer " + token;
     console.log(
         "GETTING TOKEN FROM LOCAL STORAGE AND SETTING HEADERS: ",
         token
@@ -27,7 +27,7 @@ function getToken() {
         // JWT's exp is expressed in seconds, not milliseconds, so convert
         if (payload.exp < Date.now() / 1000) {
             localStorage.removeItem("token");
-            backEndCall.defaults.headers.common["Authorization"] = null;
+            BackEndCall.defaults.headers.common["Authorization"] = null;
             token = null;
         }
     }
