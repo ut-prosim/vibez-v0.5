@@ -4,7 +4,6 @@
   "description": "music playlist app",
   "main": "server.js",
   "scripts": {
-    "start": "node index.js",
     "server": "nodemon server.js",
     "dev": "concurrently \"npm run server\" \"npm start --prefix client\" ",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
@@ -21,15 +20,20 @@
   "homepage": "https://github.com/MaricelaDuron0809/Vibez#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
+    "cookie-session": "^1.4.0",
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.0.5",
+    "passport": "^0.4.1",
+    "passport-spotify": "^2.0.0",
+    "request": "^2.88.2",
     "web-vitals": "^2.1.0"
   },
   "devDependencies": {
     "concurrently": "^5.3.0",
     "nodemon": "^2.0.4"
-  }
+  },
+   "proxy": "http://localhost:5000"
 }
