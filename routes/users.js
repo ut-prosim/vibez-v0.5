@@ -5,7 +5,7 @@ const jwt = require("jsonwebtoken");
 const { requireLogin } = require("../middleware/auth");
 
 //find  all users
-router.get("/users", async (req, res) => {
+router.get("/users", requireLogin, async (req, res) => {
   const user = await User.find(req.params).select("-password").select("-email");
   try {
     if (user) {
@@ -19,7 +19,7 @@ router.get("/users", async (req, res) => {
   }
 });
 
-router.get("/users/:id", async (req, res) => {
+router.get("/users/:id", requireLogin, async (req, res) => {
   const user = await User.findById({ _id: req.params.id })
   .select("-password")
   .select("-email");
@@ -73,7 +73,7 @@ router.post("/login", async (req, res) => {
       expiresIn: "1hr",
     });
 
-    return res.json( token );
+    return res.status(200).json(token);
   } catch (err) {
     console.log(err.message);
   }
