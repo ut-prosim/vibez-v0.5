@@ -1,12 +1,14 @@
-import backEndCall from './BackEndCall';
+import BackEndCall from './BackEndCall';
 import * as tokenService from "../utils/tokenService";
 
 const create = (data) => {
-    return backEndCall.post('/auth', data);
+    return BackEndCall.post('/', data);
 };
 
 const login = (data) => {
-    return backEndCall.post('/auth/login', data);
+    let token = tokenService.getToken();
+    
+    return BackEndCall.post('/login', data, token);
 };
 
 const getUser = () => {

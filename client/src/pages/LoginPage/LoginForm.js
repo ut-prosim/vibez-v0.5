@@ -8,21 +8,21 @@ const LoginForm = () => {
   const history =  useHistory();
   const [email, setEmail] =  useState("");
   const [password, setPassword] =  useState("");
+
+  const user = {
+    email,
+    password,
+  };
   
   const handleSubmit = async () => {
-    const user = {
-      email,
-      password,
-    };
-
     const res = await UserService.login(user);
-    if (res.data.data) {
-      const token = res.data.data.token;
+    if (res.data) {
+      const token = res.data.token;
       console.log("FROM LOGIN FORM: ", token);
       setToken(token);
       setEmail("");
       setPassword("");
-      history.push("/"); //path for redirecting to deezer popup page
+      history.push("/auth"); //path for redirecting to deezer popup page
     } else {
       alert("Server Error");
     }
