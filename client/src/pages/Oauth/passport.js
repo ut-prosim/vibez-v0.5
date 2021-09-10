@@ -13,7 +13,7 @@ passport.use(
     {
       clientID: "cb4e46622559403d9acdba7144bf4831",
       clientSecret: "cd315e345f264902bd1406a642bb2830",
-      callbackURL: "http://localhost:3000/auth/spotify/callback",
+      callbackURL: "http://localhost:8000/auth/auth/spotify/callback",
     },
     () => (accessToken, refreshToken, profile, done) => {
         console.log("from passport.js" + done, profile, accessToken, refreshToken);
@@ -21,3 +21,5 @@ passport.use(
     }
   )
 );
+
+module.exports = passport;

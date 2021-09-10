@@ -1,26 +1,26 @@
 
 const { isLoggedIn, requireLogin } = require("../middleware/auth");
-const passport = require('passport');
 const router = require("express").Router();
+const passport = require('../client/src/pages/Oauth/passport')
 
-router.post("/auth", requireLogin ,isLoggedIn, (req, res) => {
+router.post("/", requireLogin ,isLoggedIn, (req, res) => {
   res.send(`Hello ${req.user.displayName}`);
 });
-router.get("/auth/auth/error", (req, res) => res.send("Unknown Error"));
+router.get("/error", (req, res) => res.send("Unknown Error"));
 
-router.get("/auth/auth/spotify", requireLogin, passport.authenticate("spotify"));
+router.get("/spotify", requireLogin, passport.authenticate("spotify"));
 
-router.get("/auth/auth/spotify/callback", requireLogin,
-  passport.authenticate("spotify", { failureRedirect: "/auth/auth/error" }),
+router.get("/spotify/callback", requireLogin,
+  passport.authenticate("spotify", { failureRedirect: "/auth/error" }),
   function (req, res) {
-    res.redirect("/auth");
+    res.redirect("/");
   }
 );
 
-router.get("/auth/logout", (req, res) => {
+router.get("/logout", (req, res) => {
   req.session = null;
   req.logout();
-  res.redirect("/auth");
+  res.redirect("/");
 });
 
 module.exports = router;

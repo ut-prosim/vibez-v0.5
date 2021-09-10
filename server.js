@@ -7,7 +7,7 @@ const path = require("path");
 const cookieSession = require("cookie-session");
 const passport = require("passport");
 const routes = require("./routes")
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 8000;
 
 const app = express();
 

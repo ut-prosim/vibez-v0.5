@@ -12,7 +12,7 @@ function App() {
         <Switch>
           <Route exact path='/auth/register' component={SignupPage} />
           <Route exact path='/auth/login' component={LoginPage} />
-          <Route exact path='/auth/spotifylogin' component={SpotifyLoginPage} />
+          <Route exact path='/auth/spotify' component={SpotifyLoginPage} />
         {/* <Route exact path='/home' component={Home} /> */}
           <Route exact path='/auth/test' component={SomePage} />
         </Switch>
