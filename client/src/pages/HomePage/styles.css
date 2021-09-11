@@ -5,7 +5,7 @@ h3 {
     text-align: center;
     color: #ffffff;
 }
-.welcome > h2 {
+.welcome > h1 {
     color: #f8624fff;
     text-align: center;
     padding-bottom: 10px;
@@ -20,25 +20,23 @@ h3 {
     flex-direction: column;
     align-items: center;
     background-position: center center;
-    border: 1px solid white;
 }
 
 .logo {
-    
     height: 200px;
     width: 350px;
-
+    padding: 0px;
 }
 .header {
     display: flex;
     align-items: center;
-    border: 1px solid white;
+
 }
 
 .body {
     display: flex;
     flex-direction: row;
-    border: 1px solid white;
+
     width: 100%;
     justify-content: stretch;
 }
@@ -54,7 +52,6 @@ h3 {
 
 
 .sect-1, .sect-2 {
-    border: 1px solid white;
     width: 100%;
 }
 
@@ -62,14 +59,18 @@ h3 {
     width: 50%;
     display: flex;
     padding: 10px;
-    font-size: 16px;
+    font-size: 20px;
     margin-left: 25%;
     background-color:rgba(0, 0, 0, 0);
     color: white;
     border: 1px solid #f8624fff;
     justify-content: center;
+    font-weight: bold;
 }
-
+.add-playlist-btn-ctr {
+    margin-left: 140px;
+    margin-right: 140px;
+}
 .create-playlist-btn > button {
     align-items: center;
 }
@@ -88,8 +89,20 @@ h3 {
     display: flex;
     align-items: center;
     padding-top: 20px;
-    padding-bottom: 30px;
+    padding-bottom: 0px;
 }
+
+.song-title {
+    font-weight: bold;
+    padding-bottom: 0px;
+}
+.artist-text {
+    font-size: 15px;
+    padding-top: 0px;
+    font-weight: lighter;
+    text-align: left;
+}
+
 .song-details {
     padding-right: 10px;
 }
@@ -105,7 +118,7 @@ h3 {
     height: 80px;
 }
 .playlist-title {
-
+    padding-top: 0px;
     margin-left: 80px;
 }
 
@@ -144,10 +157,12 @@ h3 {
     height: 75px;
     top: 50%;
 }
-   
+.popular-heading, .your-play-header {
+    margin-left: 10%;
+}   
 .pop-album-img, .your-album-img {
-    width: 150px;
-    height: 150px;
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
 }
 

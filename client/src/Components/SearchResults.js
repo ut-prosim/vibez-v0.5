@@ -8,7 +8,7 @@ const SearchResults = () => {
             <div className="cover-art"><img className="album-cover" src={demoalbum} alt="demo ablum" />
             </div>
             <div className="song-details">
-                <p>Song Title Artist</p></div>
+                <p className="song-title">Song Title</p><p className="artist-text"> Artist</p></div>
             <div className="play-button"><img className="play-btn" src={playbutton} /></div>
             <div className="addtoplaylist">
             <button className="add-to-playlist-btn">ADD TO PLAYLIST</button>

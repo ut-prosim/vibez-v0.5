@@ -9,7 +9,7 @@ const SongDetails = () => {
                 <div className="song-art"><img className="song-art" src={demoalbum2}/>
             </div>
 
-                <div className="song-details"><p>Song Title Artist</p></div>
+                <div className="song-details"><p className="song-title">Song Title</p><p className="artist-text"> Artist</p></div>
                 <div className="release-date">
                 <p>1990</p></div>
                  <div className="trash-icon"><img className="trash-icon" src={trashicon} /></div>

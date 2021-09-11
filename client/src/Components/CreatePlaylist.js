@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { useState} from 'react'
 
 const CreatePlaylist = () => {
     return (
-        <div>
+        <div className="add-playlist-btn-ctr">
             <button className="create-playlist-btn">Create New Playlist</button>
         </div>
     )
