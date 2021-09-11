@@ -59,15 +59,15 @@ app.use(express.static("public"));
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.use((req, res, next) => {
-  console.log(req.url);
-  // is there an auth header
-  console.log("AUTH HEADER: ", req.headers.authorization);
-  if (req.body) {
-    console.log("BODY BEING SENT: ", req.body);
-  }
-  next();
-});
+// app.use((req, res, next) => {
+//   console.log(req.url);
+//   // is there an auth header
+//   console.log("AUTH HEADER: ", req.headers.authorization);
+//   if (req.body) {
+//     console.log("BODY BEING SENT: ", req.body);
+//   }
+//   next();
+// });
 
 app.use("/auth", require("./routes/users"));
 
