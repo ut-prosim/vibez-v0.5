@@ -25,7 +25,7 @@ const SignupForm = () => {
            setName('')
            setEmail("");
            setPassword("");
-           history.push("/auth/spotify");
+           history.push("/");
          }
        } else {
          alert("Server Error");
