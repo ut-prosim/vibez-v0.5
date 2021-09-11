@@ -22,7 +22,7 @@ const LoginForm = () => {
       setToken(token);
       setEmail("");
       setPassword("");
-      history.push("/auth/auth/spotify");
+      history.push("/auth/spotify");
     } else {
       alert("Server Error");
     }
