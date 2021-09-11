@@ -25,7 +25,8 @@ const SignupForm = () => {
            setName('')
            setEmail("");
            setPassword("");
-           history.push("/");
+          let url = "http://localhost:5000/auth/auth/spotify";
+          window.location = url;
          }
        } else {
          alert("Server Error");
@@ -33,7 +34,7 @@ const SignupForm = () => {
      };
 
     return (
-
+      <>
         <div className="signup-form-ctr">
              <input 
                 placeholder='name'
@@ -59,6 +60,7 @@ const SignupForm = () => {
                 <button className="signup-button" onClick={handleSubmit}>SIGN UP</button>
             <p>Already have an account? Sign in</p>
         </div>
+      </>
     )
 }
 
