@@ -56,29 +56,36 @@ h3 {
 }
 
 .create-playlist-btn { 
-    width: 50%;
+    width: 40%;
     display: flex;
     padding: 10px;
     font-size: 20px;
-    margin-left: 25%;
+    margin-left: 1%;
     background-color:rgba(0, 0, 0, 0);
     color: white;
     border: 1px solid #f8624fff;
     justify-content: center;
     font-weight: bold;
 }
-.add-playlist-btn-ctr {
-    margin-left: 140px;
-    margin-right: 140px;
-}
+
 .create-playlist-btn > button {
     align-items: center;
+    margin: 0px;
 }
-
+.create-input-ctr > input{
+    padding: 10px;
+    width: 200px;
+}
 .album-cover {
     width: 70px;
     height: 70px;
     border-radius: 50%;
+}
+.add-playlist-btn-ctr {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
 }
 .addtoplaylist > button {
     padding: 3px;

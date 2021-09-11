@@ -11,6 +11,7 @@ import SongDetails from "../../Components/SongDetails";
 import YourPlaylist from "../../Components/YourPlaylist";
 
 const HomePage = () => {
+
 return (
     <div className="home-ctr"> 
         <div className="header">
