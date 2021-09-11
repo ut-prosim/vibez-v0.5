@@ -4,8 +4,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const path = require("path");
-const cookieSession = require("cookie-session");
-const passport = require("passport");
+
 const routes = require("./routes")
 const PORT = process.env.PORT || 5000;
 
@@ -23,8 +22,7 @@ mongoose
   app.use(express.json());
   app.use(express.static(path.join(__dirname, "..", "build")));
   app.use(express.static("public"));
-  app.use(passport.initialize());
-  app.use(passport.session());
+ 
   
   app.use((req, res, next) => {
     console.log(req.url);
@@ -36,14 +34,7 @@ mongoose
     next();
   });
   
-  app.use(
-    cookieSession({
-      name: "spotify-auth-session",
-      keys: ["key1", "key2"],
-    })
-  );
 
-app.use('/auth', require('./routes/spotify'))
 app.use("/auth", require("./routes/users"));
 
 //Serve build
