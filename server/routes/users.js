@@ -35,7 +35,6 @@ router.get("/users/:id", requireLogin, async (req, res) => {
   }
 });
 //register user
-
 router.post("/register", async (req, res) => {
   const { name, email, password } = req.body;
   try {
