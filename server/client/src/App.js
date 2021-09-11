@@ -14,9 +14,8 @@ function App() {
         <Switch>
           <Route exact path='/auth/register' component={SignupPage} />
           <Route exact path='/auth/login' component={LoginPage} />
-        <Route exact path='/auth/' component={HomePage} />
+          <Route exact path='/auth' component={HomePage} />
           {/* <Route exact path='/auth/test' component={SomePage} /> */}
-
         </Switch>
     </BrowserRouter>
   );
