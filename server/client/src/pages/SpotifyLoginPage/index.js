@@ -1,3 +1,5 @@
+//  SERVER/CLIENT/SRC/PAGES/SPOTIFYLOGINPAGE/index.js  //
+
 import React from "react";
 import SpotifyLoginForm from "./SpotifyLoginForm";
 import logo from '../../images/logo.png'

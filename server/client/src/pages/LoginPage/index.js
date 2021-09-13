@@ -1,3 +1,5 @@
+//  SERVER/CLIENT/SRC/PAGES/LOGINPAGE/index.js  //
+
 import React from "react";
 import LoginForm from "./LoginForm";
 import logo from '../../images/logo.png'

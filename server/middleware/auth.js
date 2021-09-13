@@ -1,3 +1,5 @@
+//  SERVER/MIDDLEWARE/auth.js  //
+
 const jwt = require('jsonwebtoken');
 
 //auth middle 

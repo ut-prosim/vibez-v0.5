@@ -1,3 +1,5 @@
+//  SERVER/CLIENT/SRC/COMPONENTS/PlaylistTitle.js  //
+
 import React, { useState } from 'react'
 import editicon from '../images/editicon.png'
 import { func, string } from "prop-types"

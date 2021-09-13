@@ -1,3 +1,5 @@
+//  SERVER/CLIENT/SRC/COMPONENTS/SearchResults.js  //
+
 import React from 'react'
 import playbutton from '../images/playbutton.png'
 import demoalbum from '../images/demoalbum.png'

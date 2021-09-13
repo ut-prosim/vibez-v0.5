@@ -1,3 +1,5 @@
+//  SERVER/CLIENT/SRC/COMPONENTS/Search.js  //
+
 import React from 'react'
 
 const Search = () => {

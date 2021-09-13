@@ -1,3 +1,5 @@
+//  SERVER/CLIENT/SRC/PAGES/HOMEPAGE/index.js  //
+
 import React from "react";
 import CreatePlaylist from "../../Components/CreatePlaylist";
 import Search from "../../Components/Search";

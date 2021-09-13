@@ -1,4 +1,6 @@
-const mongoose = require("mongoose");
+//  SERVER/MODELS/Comment.js  //
+
+onst mongoose = require("mongoose");
 
 const commentSchema = new mongoose.Schema(
   {

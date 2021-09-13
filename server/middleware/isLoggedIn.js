@@ -1,3 +1,5 @@
+//  SERVER/MIDDLEWARE/isLoggedIn.js  //
+
 const isLoggedIn = (req, res, next) => {
   if (req.user) {
     next();

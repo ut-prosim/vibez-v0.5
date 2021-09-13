@@ -1,3 +1,5 @@
+//  SERVER/CLIENT/SRC/COMPONENTS/Welcome.js  //
+
 import React from 'react'
 import CreatePlaylist from './CreatePlaylist'
 

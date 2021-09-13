@@ -1,21 +1,47 @@
+//  server.js  //
+
+/* ===  .env  === */
 require("dotenv").config();
+
+/* ===  external modules  === */
 const express = require("express");
 const mongoose = require("mongoose");
-const cors = require("cors");
-const path = require("path");
-const routes = require("./routes");
 const cookieSession = require("cookie-session");
-const app = express();
 const passport = require("passport");
 const SpotifyStrategy = require("passport-spotify").Strategy;
+const cors = require("cors");
+const path = require("path");
 
+/* ===  internal modules  === */
+const routes = require("./routes");
+
+/* ===  instanced modules  === */
+const app = express();
+
+/* ===  configuration  === */
+const PORT = process.env.PORT || 5000;
+//  mongoose db configuration  //
+mongoose
+  .connect(process.env.DB_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: false,
+  })
+  .then(() => console.log("mongoDB is connected"))
+  .catch((err) => console.log(err));
+
+/* ===  middleware  === */
+//  body data middleware  //
+app.use(express.json());
+//  session middleware  //
 app.use(
   cookieSession({
     name: "spotify-auth-session",
     keys: ["key1", "key2"],
   })
 );
-
+//  passport middleware (oauth)  //
+app.use(passport.initialize());
+app.use(passport.session());
 passport.serializeUser(function (user, done) {
   done(null, user);
 });
@@ -41,27 +67,15 @@ passport.use(
     }
   )
 );
-
-const PORT = process.env.PORT || 5000;
-
-mongoose
-  .connect(process.env.DB_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: false,
-  })
-  .then(() => console.log("mongoDB is connected"))
-  .catch((err) => console.log(err));
-
+//  resource sharing  //
 app.use(cors());
-app.use(express.json());
+//  serve public files  //
 app.use(express.static(path.join(__dirname, "..", "build")));
 app.use(express.static("public"));
-app.use(passport.initialize());
-app.use(passport.session());
-
+//  will log requests  //
 // app.use((req, res, next) => {
 //   console.log(req.url);
-//   // is there an auth header
+//   //  is there an auth header  //
 //   console.log("AUTH HEADER: ", req.headers.authorization);
 //   if (req.body) {
 //     console.log("BODY BEING SENT: ", req.body);
@@ -69,9 +83,10 @@ app.use(passport.session());
 //   next();
 // });
 
+/* ===  routers & controllers  === */
 app.use("/auth", require("./routes/users"));
 
-//Serve build
+//  serve build  //
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 
@@ -97,4 +112,5 @@ app.get(
   }
 );
 
+/* ===  server listener  === */
 app.listen(PORT, () => console.log("Server is running"));

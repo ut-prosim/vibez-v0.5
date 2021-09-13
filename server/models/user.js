@@ -1,3 +1,5 @@
+//  SERVER/MODELS/User.js  //
+
 const mongoose = require("mongoose");
 
 

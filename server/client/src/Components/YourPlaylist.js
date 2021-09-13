@@ -1,3 +1,5 @@
+//  SERVER/CLIENT/SRC/COMPONENTS/YourPlaylist.js  //
+
 import React from 'react'
 import demo4 from '../images/demo4.png'
 
